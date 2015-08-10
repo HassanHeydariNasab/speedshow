@@ -23,7 +23,8 @@ output2=os.popen(c).read()
 rx2 = int(output2.split(" ")[11][6:])
 tx2 = int(output2.split(" ")[16][6:])
 o = "Download : " + str((rx2 - rx1) * 2 / 1024) + " KB/s  " + "Upload : " + str((tx2 - tx1) * 2 / 1024) + " KB/s" 
+print o
 pynotify.init("s")
 n=pynotify.Notification("Network Speed for %s"%interface,o)
 n.show()
-pynotify.uninit("s") 
+pynotify.uninit() 
